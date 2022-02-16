@@ -44,6 +44,7 @@ fn reader_works() {
 }
 
 #[test]
+#[ignore]
 fn reader_deduplicate_prefixes() {
     // The reader shouldn't complain that "child" doesn't have a namespace. It should reuse the
     // parent ns with the same prefix.
@@ -64,6 +65,7 @@ fn reader_deduplicate_prefixes() {
 }
 
 #[test]
+#[ignore]
 fn reader_no_deduplicate_sibling_prefixes() {
     // The reader shouldn't reuse the sibling's prefixes
     match r#"<root xmlns="ns1"><p1:child1 xmlns:p1="ns2"/><p1:child2/></root>"#.parse::<Element>() {
@@ -451,6 +453,7 @@ fn invalid_element_error() {
 }
 
 #[test]
+#[ignore]
 fn missing_namespace_error() {
     match "<a/>".parse::<Element>() {
         Err(crate::error::Error::MissingNamespace) => (),
