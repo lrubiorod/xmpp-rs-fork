@@ -1,0 +1,30 @@
+[package]
+name = "xmpp"
+version = "0.3.0"
+authors = [
+  "Emmanuel Gil Peyrot <linkmauve@linkmauve.fr>",
+  "Maxime “pep” Buquet <pep@bouah.net>",
+]
+description = "High-level XMPP library"
+homepage = "https://gitlab.com/xmpp-rs/xmpp-rs"
+repository = "https://gitlab.com/xmpp-rs/xmpp-rs"
+keywords = ["xmpp", "jabber", "chat", "messaging", "bot"]
+categories = ["network-programming"]
+license = "MPL-2.0"
+edition = "2018"
+
+[dependencies]
+tokio-xmpp = "3.0.0"
+xmpp-parsers = "0.18"
+futures = "0.3"
+tokio = "1"
+log = "0.4"
+
+[dev-dependencies]
+env_logger = "0.8"
+
+[features]
+default = ["avatars"]
+avatars = []
+serde = ["tokio-xmpp/serde", "xmpp-parsers/serde"]
+tls-rust = ["tokio-xmpp/tls-rust"]

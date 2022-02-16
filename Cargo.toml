@@ -1,0 +1,15 @@
+[workspace]
+members = [  # alphabetically sorted
+  "jid",
+  "minidom",
+  "parsers",
+  "tokio-xmpp",
+  "xmpp",
+]
+
+[patch.crates-io]
+jid = { path = "jid" }
+minidom = { path = "minidom" }
+tokio-xmpp = { path = "tokio-xmpp" }
+xmpp-parsers = { path = "parsers" }
+xmpp = { path = "xmpp" }

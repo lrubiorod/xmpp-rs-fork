@@ -1,0 +1,35 @@
+[package]
+name = "xmpp-parsers"
+version = "0.18.1"
+authors = [
+  "Emmanuel Gil Peyrot <linkmauve@linkmauve.fr>",
+  "Maxime “pep” Buquet <pep@bouah.net>",
+]
+description = "Collection of parsers and serialisers for XMPP extensions"
+homepage = "https://gitlab.com/xmpp-rs/xmpp-rs"
+repository = "https://gitlab.com/xmpp-rs/xmpp-rs"
+keywords = ["xmpp", "jabber", "xml"]
+categories = ["parsing", "network-programming"]
+license = "MPL-2.0"
+edition = "2018"
+
+[dependencies]
+minidom = "0.13"
+jid = { version = "0.9", features = ["minidom"] }
+base64 = "0.13"
+digest = "0.10"
+sha-1 = "0.10"
+sha2 = "0.10"
+sha3 = "0.10"
+blake2 = "0.10"
+chrono = { version = "0.4.5", default-features = false, features = ["std"] }
+
+[features]
+# Build xmpp-parsers to make components instead of clients.
+component = []
+# Disable validation of unknown attributes.
+disable-validation = []
+serde = ["jid/serde"]
+
+[package.metadata.docs.rs]
+rustdoc-args = [ "--sort-modules-by-appearance", "-Zunstable-options" ]
